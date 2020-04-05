@@ -24,17 +24,6 @@ public class PlayerAnimation : MonoBehaviour
             ainm.SetBool("moving", true);
         else if (verticalInput == 0)
             ainm.SetBool("moving", false);
-        
-        ///////////////////////////////////////////////////////Check if the player jumped/////////////////////////////////////////////////////////////////
-        if (Input.GetButtonDown("Jump"))
-        {
-            if(Grounded())
-            {
-                //ainm.SetBool("jump", true);
-            }
-        }
-        //else
-            //ainm.SetBool("jump", false);
     }
 
     bool Grounded()

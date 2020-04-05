@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     protected Collider coll;
     [SerializeField] private float jumpRange = 1f;
     private Animator ainm;
+    private bool jumping = false;
 
     public float angle = 1.5f;
 
@@ -52,6 +53,16 @@ public class PlayerController : MonoBehaviour
                 ainm.SetTrigger("jump");
             }
         }
+
+        if (!Grounded())
+            jumping = true;
+        else
+            jumping = false;
+
+        if (Grounded())
+            ainm.SetBool("grounded", true);
+        else
+            ainm.SetBool("grounded", false);
     }
 
 
