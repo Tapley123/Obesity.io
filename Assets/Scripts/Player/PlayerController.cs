@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     protected Collider coll;
     [SerializeField] private float jumpRange = 1f;
     private Animator ainm;
-    private bool jumping = false;
 
     public float angle = 1.5f;
 
@@ -33,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //turn left and right
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             transform.Rotate(Vector3.up, -angle);
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
@@ -45,24 +45,20 @@ public class PlayerController : MonoBehaviour
         moveAmount = Vector3.SmoothDamp(moveAmount, targetMoveAmount, ref smoothMoveVelocity, .15f);
 
         // Jump
-        if (Input.GetButtonDown("Jump"))
-        {
-            if(Grounded())
-            {
+        if (Input.GetButtonDown("Jump") && Grounded())
                 myRb.AddForce(transform.up * jumpForce);
-                ainm.SetTrigger("jump");
-            }
-        }
 
-        if (!Grounded())
-            jumping = true;
-        else
-            jumping = false;
-
+        // fly animation plays when chicken isnt on a surface
         if (Grounded())
             ainm.SetBool("grounded", true);
         else
             ainm.SetBool("grounded", false);
+
+        // Check if the player is moving forwards or backwards
+        if (inputY != 0)
+            ainm.SetBool("moving", true);
+        else if (inputY == 0)
+            ainm.SetBool("moving", false);
     }
 
 
