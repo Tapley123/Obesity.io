@@ -18,17 +18,18 @@ public class FollowPlayer : MonoBehaviour
     {
 
         //////////////Rotate towards player//////////////////
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(chicken.position - transform.position),
-                                                rotationSpeed * Time.deltaTime);
-
+        Vector3 chickenPosition = new Vector3(chicken.position.x, transform.position.y, chicken.position.z);
+        transform.LookAt(chickenPosition);
+        
         /////////////Check the distance from the player/////////////
         m_distance = Vector3.Distance(transform.position, chicken.position);
-        //Debug.Log(m_distance);
 
         /////////////Move towards player////////////////
         if (m_distance <= 200)
         {
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
         }
+        
     }
+    
 }
