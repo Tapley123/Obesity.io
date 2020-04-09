@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Nugget : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float rotationSpeed = 10f;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        Vector3 rotate = new Vector3(transform.rotation.x, transform.rotation.y + rotationSpeed * Time.deltaTime, transform.rotation.z);
+        transform.Rotate(rotate);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            transform.position = new Vector3(0, -100, 0);
+            Debug.Log("YUM!!!");
+        }
     }
 }
