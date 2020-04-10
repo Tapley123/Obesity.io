@@ -24,6 +24,7 @@ public class Nugget : MonoBehaviour
         {
             transform.position = new Vector3(0, -100, 0);
             Debug.Log("YUM!!!");
+            UIManager.nuggetAmount += 1;
         }
     }
 }
