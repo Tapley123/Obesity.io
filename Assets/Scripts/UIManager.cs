@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     private GameObject nugget1, nugget2, nugget3, nugget4, nugget5, nugget6, nugget7, nugget8;
     public static int nuggetAmount = 0;
+
     [SerializeField] private bool displayNuggetsCollected = true;
     [SerializeField] private bool canWin = true;
 
@@ -136,11 +137,13 @@ public class UIManager : MonoBehaviour
                 nugget8.SetActive(true);
             }
         }
-        /*
-        if(canWin && )
+        
+        if(canWin)
         {
-
+            if (nuggetAmount >= 8)
+            {
+                Debug.Log("WIN!!!!");
+            }
         }
-        */
     }
 }

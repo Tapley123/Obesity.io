@@ -23,7 +23,7 @@ public class Nugget : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             transform.position = new Vector3(0, -100, 0);
-            Debug.Log("YUM!!!");
+            //Debug.Log("YUM!!!");
             UIManager.nuggetAmount += 1;
         }
     }
