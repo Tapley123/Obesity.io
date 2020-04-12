@@ -41,7 +41,5 @@ public class TimerController : MonoBehaviour
     void Update()
     {
         UpdateTimer();
-
-        Debug.Log("win time = " + winTime);
     }
 }

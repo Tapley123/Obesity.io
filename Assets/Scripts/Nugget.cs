@@ -20,7 +20,7 @@ public class Nugget : MonoBehaviour
             transform.position = new Vector3(0, -100, 0);
             UIManager.nuggetAmount += 1;
             EnemySpawner.enemySpawnNumber += 1;
-            //EnemySpawner.SpawnEnemy();
+            EnemySpawner.canSpawn = true;
         }
     }
 }
