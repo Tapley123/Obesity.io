@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Food
+  - nug1
+  - nug2
+  - nug3
+  - nug4
+  - nug5
+  - nug6
+  - nug7
+  - nug8
   layers:
   - Default
   - TransparentFX

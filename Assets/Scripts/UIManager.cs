@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     private GameObject nugget1, nugget2, nugget3, nugget4, nugget5, nugget6, nugget7, nugget8;
     public static int nuggetAmount = 0;
+    public static int enemySpawnNumber = -1;
 
     [SerializeField] private bool displayNuggetsCollected = true;
     [SerializeField] private bool canWin = true;

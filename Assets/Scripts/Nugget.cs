@@ -5,7 +5,8 @@ using UnityEngine;
 public class Nugget : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 10f;
-    
+    public GameObject enemy;
+        
     void Update()
     {
         Vector3 rotate = new Vector3(transform.rotation.x, transform.rotation.y + rotationSpeed * Time.deltaTime, transform.rotation.z);
@@ -18,7 +19,8 @@ public class Nugget : MonoBehaviour
         {
             transform.position = new Vector3(0, -100, 0);
             UIManager.nuggetAmount += 1;
-            EnemySpawner.SpawnEnemy();
+            EnemySpawner.enemySpawnNumber += 1;
+            //EnemySpawner.SpawnEnemy();
         }
     }
 }
