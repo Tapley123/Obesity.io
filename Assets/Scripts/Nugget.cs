@@ -18,6 +18,7 @@ public class Nugget : MonoBehaviour
         {
             transform.position = new Vector3(0, -100, 0);
             UIManager.nuggetAmount += 1;
+            EnemySpawner.SpawnEnemy();
         }
     }
 }
