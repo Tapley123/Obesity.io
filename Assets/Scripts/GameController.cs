@@ -9,7 +9,6 @@ public class GameController : MonoBehaviour
 {
     public GameObject winScreen;
 
-    public bool startGame = false;
     public static bool allNuggs = false;
     public int amountOfNuggsToWin = 8;
     public TextMeshProUGUI winTimeText;
