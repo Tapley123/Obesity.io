@@ -5,12 +5,6 @@ using UnityEngine;
 public class Nugget : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 10f;
-
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {
@@ -23,7 +17,6 @@ public class Nugget : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             transform.position = new Vector3(0, -100, 0);
-            //Debug.Log("YUM!!!");
             UIManager.nuggetAmount += 1;
         }
     }

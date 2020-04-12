@@ -12,25 +12,36 @@ public class TimerController : MonoBehaviour
     private int minuteCount;
     private int hourCount;
 
+    public static string winTime;
     
-    public void UpdateTimerTest()
+    public void UpdateTimer()
     {
-        secondsCount += Time.deltaTime;
-        timerTest.text = "Time: " + hourCount + "h:" + minuteCount + "m:" + (int)secondsCount + "s";
-        if (secondsCount >= 60)
+        //only update the timer if the player doesnt have all the nugs yet
+        if(!GameController.allNuggs)
         {
-            minuteCount++;
-            secondsCount = 0;
+            secondsCount += Time.deltaTime;
+            timerTest.text = "Time: " + hourCount + "h:" + minuteCount + "m:" + (int)secondsCount + "s";
+            if (secondsCount >= 60)
+            {
+                minuteCount++;
+                secondsCount = 0;
+            }
+            else if (minuteCount >= 60)
+            {
+                hourCount++;
+                minuteCount = 0;
+            }
         }
-        else if (minuteCount >= 60)
+        if(GameController.allNuggs)
         {
-            hourCount++;
-            minuteCount = 0;
+            winTime = timerTest.text;
         }
     }
 
     void Update()
     {
-        UpdateTimerTest();
+        UpdateTimer();
+
+        Debug.Log("win time = " + winTime);
     }
 }

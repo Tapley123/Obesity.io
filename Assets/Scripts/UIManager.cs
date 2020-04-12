@@ -137,13 +137,5 @@ public class UIManager : MonoBehaviour
                 nugget8.SetActive(true);
             }
         }
-        
-        if(canWin)
-        {
-            if (nuggetAmount >= 8)
-            {
-                Debug.Log("WIN!!!!");
-            }
-        }
     }
 }

@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpRange = 1f;
     private Animator ainm;
 
-    public float angle = 1.5f;
+    public float turnSpeed = 1.5f; //angle of turn
 
     float rotY;
 
@@ -34,9 +34,9 @@ public class PlayerController : MonoBehaviour
     {
         //turn left and right
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-            transform.Rotate(Vector3.up, -angle);
+            transform.Rotate(Vector3.up, -turnSpeed);
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-            transform.Rotate(Vector3.up, angle);
+            transform.Rotate(Vector3.up, turnSpeed);
 
         float inputY = Input.GetAxisRaw("Vertical");
 
