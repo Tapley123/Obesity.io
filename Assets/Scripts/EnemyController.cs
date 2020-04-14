@@ -39,14 +39,40 @@ public class EnemyController : MonoBehaviour
             spawn = false;
         }
 
+
+
+
+
+
+
         if (transform.position == spawnPositions[0].transform.position)
+        {
             Debug.Log("Spawn Position 1");
+            DoorOpener.door1 = true;
+        }
+            
         if (transform.position == spawnPositions[1].transform.position)
+        {
             Debug.Log("Spawn Position 2");
+            DoorOpener.door2 = true;
+        }
+            
         if (transform.position == spawnPositions[2].transform.position)
+        {
             Debug.Log("Spawn Position 3");
+            DoorOpener.door3 = true;
+        }
+            
         if (transform.position == spawnPositions[3].transform.position)
+        {
             Debug.Log("Spawn Position 4");
+            DoorOpener.door4 = true;
+        }
+            
+
+
+
+
 
 
         if (follow)
