@@ -14,11 +14,12 @@ public class EnemyController : MonoBehaviour
     public Transform[] spawnPositions;
 
     [SerializeField] private float spawnStateTime;
+    private Vector3 spawnPosition;
 
     private Vector3 RandomSpawnPos()
     {
-        Vector3 pos = spawnPositions[Random.Range(0, spawnPositions.Length)].transform.position;
-        return pos;
+        spawnPosition = spawnPositions[Random.Range(0, spawnPositions.Length)].transform.position;
+        return spawnPosition;
     }
 
 
@@ -35,9 +36,20 @@ public class EnemyController : MonoBehaviour
         if(spawn)
         {
             StartCoroutine(SpawnCourotine(spawnStateTime));
+            spawn = false;
         }
 
-        if(follow)
+        if (transform.position == spawnPositions[0].transform.position)
+            Debug.Log("Spawn Position 1");
+        if (transform.position == spawnPositions[1].transform.position)
+            Debug.Log("Spawn Position 2");
+        if (transform.position == spawnPositions[2].transform.position)
+            Debug.Log("Spawn Position 3");
+        if (transform.position == spawnPositions[3].transform.position)
+            Debug.Log("Spawn Position 4");
+
+
+        if (follow)
         {
             spawn = false;
             //////////////Rotate towards player//////////////////
