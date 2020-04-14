@@ -13,6 +13,8 @@ public class EnemyController : MonoBehaviour
     public static Vector3 spawnPos1, spawnPos2, spawnPos3, spawnPos4;
     public Transform[] spawnPositions;
 
+    [SerializeField] private float spawnStateTime;
+
     private Vector3 RandomSpawnPos()
     {
         Vector3 pos = spawnPositions[Random.Range(0, spawnPositions.Length)].transform.position;
@@ -32,8 +34,7 @@ public class EnemyController : MonoBehaviour
     {
         if(spawn)
         {
-            follow = false;
-            transform.position = RandomSpawnPos();
+            StartCoroutine(SpawnCourotine(spawnStateTime));
         }
 
         if(follow)
@@ -52,5 +53,15 @@ public class EnemyController : MonoBehaviour
                 transform.position += transform.forward * moveSpeed * Time.deltaTime;
             }
         }
+    }
+
+    IEnumerator SpawnCourotine(float time)
+    {
+        follow = false;
+        transform.position = RandomSpawnPos();
+
+        yield return new WaitForSeconds(time);
+        spawn = false;
+        follow = true;
     }
 }
