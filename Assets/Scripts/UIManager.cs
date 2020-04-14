@@ -12,6 +12,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private bool displayNuggetsCollected = true;
     [SerializeField] private bool canWin = true;
 
+    public GameObject startScreen;
+
+    private void Awake()
+    {
+        Time.timeScale = 0;
+        startScreen.SetActive(true);
+    }
+
     void Start()
     {
         nugget1 = GameObject.Find("Nugget1");
@@ -138,5 +146,11 @@ public class UIManager : MonoBehaviour
                 nugget8.SetActive(true);
             }
         }
+    }
+
+    public void PlayButton()
+    {
+        Time.timeScale = 1;
+        startScreen.SetActive(false);
     }
 }
