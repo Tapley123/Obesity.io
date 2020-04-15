@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
     private Transform chicken;
     public float rotationSpeed = 8f;
     public float moveSpeed = 20f;
-    private float m_distance;
+    private float distanceEnemyChicken, distanceEnemyCenter;
 
     public bool spawn, follow, sendtoSpawn;
     public static Vector3 spawnPos1, spawnPos2, spawnPos3, spawnPos4;
@@ -18,12 +18,15 @@ public class EnemyController : MonoBehaviour
 
     private bool canOpenDoors = true;
     private Transform CenterOfRoom;
-
+    public float enemySeePlayerDist = 70f;
+    
     private Vector3 RandomSpawnPos()
     {
         spawnPosition = spawnPositions[Random.Range(0, spawnPositions.Length)].transform.position;
         return spawnPosition;
     }
+    
+
 
     private void Awake()
     {
@@ -42,24 +45,6 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-
-
-        if (spawn)
-        {
-            sendtoSpawn = true;
-            Debug.Log("Spawn");
-            StartCoroutine(SpawnCourotine(spawnStateTime));
-            spawn = false;
-            //transform.position += transform.forward * moveSpeed * Time.deltaTime;
-        }
-        if (sendtoSpawn)
-        {
-            //Debug.Log("Send to Spawn");
-            transform.position = RandomSpawnPos();
-            sendtoSpawn = false;
-        }
-
-
         if (canOpenDoors)
         {
             if (transform.position == spawnPositions[0].transform.position)
@@ -87,42 +72,25 @@ public class EnemyController : MonoBehaviour
             }
         }
 
+        
+        Vector3 chickenPosition = new Vector3(chicken.position.x, transform.position.y, chicken.position.z);
+        distanceEnemyChicken = Vector3.Distance(transform.position, chicken.position);
+        distanceEnemyCenter = Vector3.Distance(transform.position, CenterOfRoom.position);
 
-        if (follow)
+        if (distanceEnemyChicken <= enemySeePlayerDist)
         {
-            spawn = false;
-            //////////////Rotate towards player//////////////////
-            Vector3 chickenPosition = new Vector3(chicken.position.x, transform.position.y, chicken.position.z);
             transform.LookAt(chickenPosition);
-
-            /////////////Check the distance from the player/////////////
-            m_distance = Vector3.Distance(transform.position, chicken.position);
-
-            /////////////Move towards player////////////////
-            if (m_distance <= 200)
-            {
-                transform.position += transform.forward * moveSpeed * Time.deltaTime;
-            }
+            transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        }
+        else if(distanceEnemyChicken >= enemySeePlayerDist && distanceEnemyCenter >= 20)
+        {
+            transform.LookAt(CenterOfRoom);
+            transform.position += transform.forward * moveSpeed * Time.deltaTime;
         }
     }
     IEnumerator SpawnCourotine(float time)
     {
         follow = false;
-        transform.LookAt(CenterOfRoom.position);
-
-        /////////////Check the distance from the player/////////////
-        m_distance = Vector3.Distance(transform.position, CenterOfRoom.position);
-
-        /////////////Move towards player////////////////
-        if (m_distance <= 200)
-        {
-            transform.position += transform.forward * moveSpeed * Time.deltaTime;
-        }
-
-
-        //transform.LookAt(CenterOfRoom.position); //look at center of room
-        //transform.position += transform.forward * moveSpeed * Time.deltaTime;
-        //transform.position = Vector3.MoveTowards(transform.position, CenterOfRoom.position, moveSpeed);
 
         yield return new WaitForSeconds(time);
         spawn = false;

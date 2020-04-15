@@ -10,6 +10,13 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] enemies;
     public static bool canSpawn = false;
     public static int enemySpawnNumber = -1;
+    public Transform[] spawnPositions;
+
+    private Vector3 RandomSpawnPos()
+    {
+        Vector3 spawnPosition = spawnPositions[Random.Range(0, spawnPositions.Length)].transform.position;
+        return spawnPosition;
+    }
 
     void Start()
     {
@@ -17,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < 8; i++)
         {
             //enemies[i].transform.position = new Vector3(Random.Range(-55, 75), 6, Random.Range(-55, 75));
+            enemies[i].gameObject.transform.position = RandomSpawnPos();
             enemies[i].gameObject.SetActive(false);
         }
     }
