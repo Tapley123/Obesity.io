@@ -24,8 +24,8 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < 8; i++)
         {
             //enemies[i].transform.position = new Vector3(Random.Range(-55, 75), 6, Random.Range(-55, 75));
-            enemies[i].gameObject.transform.position = RandomSpawnPos();
             enemies[i].gameObject.SetActive(false);
+            enemies[i].gameObject.transform.position = RandomSpawnPos();
         }
     }
 
