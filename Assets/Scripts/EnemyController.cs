@@ -16,6 +16,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float spawnStateTime;
     private Vector3 spawnPosition;
 
+    private bool canOpenDoors = true;
+
     private Vector3 RandomSpawnPos()
     {
         spawnPosition = spawnPositions[Random.Range(0, spawnPositions.Length)].transform.position;
@@ -33,47 +35,38 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if(spawn)
+            
+
+        if (spawn)
         {
+            Debug.Log("Spawn");
             StartCoroutine(SpawnCourotine(spawnStateTime));
             spawn = false;
         }
-
-
-
-
-
-
 
         if (transform.position == spawnPositions[0].transform.position)
         {
             Debug.Log("Spawn Position 1");
             DoorOpener.door1 = true;
         }
-            
+
         if (transform.position == spawnPositions[1].transform.position)
         {
             Debug.Log("Spawn Position 2");
             DoorOpener.door2 = true;
         }
-            
+
         if (transform.position == spawnPositions[2].transform.position)
         {
             Debug.Log("Spawn Position 3");
             DoorOpener.door3 = true;
         }
-            
+
         if (transform.position == spawnPositions[3].transform.position)
         {
             Debug.Log("Spawn Position 4");
             DoorOpener.door4 = true;
         }
-            
-
-
-
-
-
 
         if (follow)
         {
@@ -97,6 +90,8 @@ public class EnemyController : MonoBehaviour
     {
         follow = false;
         transform.position = RandomSpawnPos();
+        //transform.LookAt(new Vector3(-13, 0, 0)); //look at center of room
+        //transform.position += transform.forward * moveSpeed * Time.deltaTime;
 
         yield return new WaitForSeconds(time);
         spawn = false;
