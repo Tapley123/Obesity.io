@@ -4,32 +4,37 @@ using UnityEngine;
 
 public class DoorOpener : MonoBehaviour
 {
-    public Animator[] doorAnimators;
+    public GameObject[] doors;
     public static bool door1 = false, door2 = false, door3 = false, door4 = false;
+    public AudioClip doorSound;
     
     void Update()
     {
         if(door1)
         {
-            doorAnimators[0].SetTrigger("Open");
+            doors[0].GetComponent<Animator>().SetTrigger("Open");
+            doors[0].GetComponent<AudioSource>().PlayOneShot(doorSound);
             door1 = false;
         }
 
         if (door2)
         {
-            doorAnimators[1].SetTrigger("Open");
+            doors[1].GetComponent<Animator>().SetTrigger("Open");
+            doors[1].GetComponent<AudioSource>().PlayOneShot(doorSound);
             door2 = false;
         }
 
         if (door3)
         {
-            doorAnimators[2].SetTrigger("Open");
+            doors[2].GetComponent<Animator>().SetTrigger("Open");
+            doors[2].GetComponent<AudioSource>().PlayOneShot(doorSound);
             door3 = false;
         }
 
         if (door4)
         {
-            doorAnimators[3].SetTrigger("Open");
+            doors[3].GetComponent<Animator>().SetTrigger("Open");
+            doors[3].GetComponent<AudioSource>().PlayOneShot(doorSound);
             door4 = false;
         }
     }
