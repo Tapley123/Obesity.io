@@ -18,19 +18,19 @@ public class DoorOpener : MonoBehaviour
         if (door2)
         {
             doorAnimators[1].SetTrigger("Open");
-            door1 = false;
+            door2 = false;
         }
 
         if (door3)
         {
             doorAnimators[2].SetTrigger("Open");
-            door1 = false;
+            door3 = false;
         }
 
         if (door4)
         {
             doorAnimators[3].SetTrigger("Open");
-            door1 = false;
+            door4 = false;
         }
     }
 }
