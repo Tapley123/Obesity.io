@@ -96,6 +96,8 @@ public class EnemyController : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             Debug.Log("CAUGHT!!");
+            GameController.caughtByEnemy = true;
+            GameController.loseScreenActive = true;
         }
     }
 }

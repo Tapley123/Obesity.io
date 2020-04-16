@@ -153,4 +153,8 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
         startScreen.SetActive(false);
     }
+    public void ReplayButton()
+    {
+        Time.timeScale = 1;
+    }
 }
