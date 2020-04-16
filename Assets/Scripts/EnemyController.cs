@@ -90,4 +90,12 @@ public class EnemyController : MonoBehaviour
         spawn = false;
         follow = true;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            Debug.Log("CAUGHT!!");
+        }
+    }
 }
