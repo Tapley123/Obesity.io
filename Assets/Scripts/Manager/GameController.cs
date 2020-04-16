@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
             Time.timeScale = 0;
 
             winScreen.SetActive(true);
+            Cursor.visible = true;
         }
 
         if(caughtByEnemy)

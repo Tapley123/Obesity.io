@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour
         if(spawn)
         {
             //StartCoroutine(SpawnCourotine(spawnStateTime));
-            StartCoroutine(SpawnCourotine(2));
+            StartCoroutine(SpawnCourotine(spawnStateTime));
         }
 
         Vector3 chickenPosition = new Vector3(chicken.position.x, transform.position.y, chicken.position.z);
