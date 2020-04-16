@@ -16,8 +16,14 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        Time.timeScale = 0;
-        startScreen.SetActive(true);
+        ///////if the player has gotten caught when they replay the start screen wont appear again
+        if(GameController.lostGame)
+            startScreen.SetActive(false);
+        else
+        {
+            Time.timeScale = 0;
+            startScreen.SetActive(true);
+        }
     }
 
     void Start()
@@ -153,8 +159,5 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
         startScreen.SetActive(false);
     }
-    public void ReplayButton()
-    {
-        Time.timeScale = 1;
-    }
+    
 }

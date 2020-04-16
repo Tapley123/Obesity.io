@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public GameObject winScreen, loseScreen;
-    public static bool loseScreenActive = false;
+    public static bool lostGame = false; //use this to prevent the start screen from coming up after the player dies and presses restart
 
     public static bool allNuggs = false, caughtByEnemy = false;
     public int amountOfNuggsToWin = 8;
@@ -24,9 +24,6 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log("Lose Screen ASctive = " + loseScreenActive);
-        Debug.Log("Time Scale = " + Time.timeScale);
-
         //if the player has collected all the nuggets
         if(UIManager.nuggetAmount >= amountOfNuggsToWin)
         {
@@ -43,13 +40,15 @@ public class GameController : MonoBehaviour
         {
             Time.timeScale = 0;
             loseScreen.SetActive(true);
+            lostGame = true;
+
             caughtByEnemy = false;
         }
     }
 
     public void ReplayButton()
     {
-        loseScreenActive = false;
+        UIManager.nuggetAmount = 0;
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
