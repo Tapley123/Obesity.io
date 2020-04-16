@@ -18,8 +18,9 @@ public class EnemySpawner : MonoBehaviour
         return spawnPosition;
     }
 
-    void Start()
+    void Awake()
     {
+        enemySpawnNumber = -1;
         enemy = enemyPrefab;
         for (int i = 0; i < 8; i++)
         {
@@ -33,6 +34,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if(canSpawn)
         {
+            Debug.Log("Enemy Spawn Number = " + enemySpawnNumber);
             enemies[enemySpawnNumber].SetActive(true);
             enemies[enemySpawnNumber].gameObject.GetComponent<EnemyController>().spawn = true;
             
