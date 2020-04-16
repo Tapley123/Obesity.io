@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlaySound : MonoBehaviour
 {
     private AudioSource audioS;
-    [SerializeField] private string tagName;
-    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private string nuggetTagName, enemyTagName;
+    [SerializeField] private AudioClip nuggetAudioClip, hurtAudioClip;
 
     void Start()
     {
@@ -16,9 +16,10 @@ public class PlaySound : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag(tagName))
-        {
-            audioS.PlayOneShot(audioClip);
-        }
+        if(other.CompareTag(nuggetTagName))
+            audioS.PlayOneShot(nuggetAudioClip);
+
+        if (other.CompareTag(enemyTagName))
+            audioS.PlayOneShot(hurtAudioClip);
     }
 }
