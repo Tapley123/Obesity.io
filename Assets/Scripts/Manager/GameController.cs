@@ -17,25 +17,15 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1;
         winScreen.SetActive(false);
         loseScreen.SetActive(false);
     }
-
-    void Start()
-    {
-        winScreen.SetActive(false);
-        loseScreen.SetActive(false);
-    }
-        
 
     void Update()
     {
         //Debug.Log("Lose Screen ASctive = " + loseScreenActive);
-
-        if (!loseScreenActive)
-            loseScreen.SetActive(false);
-        else
-            loseScreen.SetActive(true);
+        Debug.Log("Time Scale = " + Time.timeScale);
 
         //if the player has collected all the nuggets
         if(UIManager.nuggetAmount >= amountOfNuggsToWin)
@@ -53,6 +43,7 @@ public class GameController : MonoBehaviour
         {
             Time.timeScale = 0;
             loseScreen.SetActive(true);
+            caughtByEnemy = false;
         }
     }
 
@@ -61,7 +52,5 @@ public class GameController : MonoBehaviour
         loseScreenActive = false;
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
-        
-        Time.timeScale = 1;
     }
 }
