@@ -168,4 +168,10 @@ public class UIManager : MonoBehaviour
         startScreen.SetActive(false);
     }
     
+
+    public void QuitGame()
+    {
+        audioS.PlayOneShot(buttonSound);
+        Application.Quit();
+    }
 }
