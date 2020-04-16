@@ -25,8 +25,8 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        spawn = false;
-        follow = true;
+        spawn = true;
+        follow = false;
 
         chicken = GameObject.Find("Chicken").transform;
         CenterOfRoom = GameObject.Find("CenterOfRoom").transform;
@@ -36,7 +36,8 @@ public class EnemyController : MonoBehaviour
     {
         if(spawn)
         {
-            StartCoroutine(SpawnCourotine(spawnStateTime));
+            //StartCoroutine(SpawnCourotine(spawnStateTime));
+            StartCoroutine(SpawnCourotine(2));
         }
 
         Vector3 chickenPosition = new Vector3(chicken.position.x, transform.position.y, chicken.position.z);
