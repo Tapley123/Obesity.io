@@ -34,33 +34,6 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (canOpenDoors)
-        {
-            if (transform.position == spawnPositions[0].transform.position)
-            {
-                //Debug.Log("Spawn Position 1");
-                DoorOpener.door1 = true;
-            }
-
-            if (transform.position == spawnPositions[1].transform.position)
-            {
-                //Debug.Log("Spawn Position 2");
-                DoorOpener.door2 = true;
-            }
-
-            if (transform.position == spawnPositions[2].transform.position)
-            {
-                //Debug.Log("Spawn Position 3");
-                DoorOpener.door3 = true;
-            }
-
-            if (transform.position == spawnPositions[3].transform.position)
-            {
-                //Debug.Log("Spawn Position 4");
-                DoorOpener.door4 = true;
-            }
-        }
-
         if(spawn)
         {
             StartCoroutine(SpawnCourotine(spawnStateTime));
@@ -98,5 +71,17 @@ public class EnemyController : MonoBehaviour
             Debug.Log("CAUGHT!!");
             GameController.caughtByEnemy = true;
         }
+
+        if(other.CompareTag("Spawn1"))
+            DoorOpener.door1 = true;
+
+        if (other.CompareTag("Spawn2"))
+            DoorOpener.door2 = true;
+
+        if (other.CompareTag("Spawn3"))
+            DoorOpener.door3 = true;
+
+        if (other.CompareTag("Spawn4"))
+            DoorOpener.door4 = true;
     }
 }
