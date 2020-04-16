@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    private AudioSource audioS;
+    [SerializeField] private AudioClip buttonSound;
+
     private GameObject nugget1, nugget2, nugget3, nugget4, nugget5, nugget6, nugget7, nugget8;
     public static int nuggetAmount = 0;
     
@@ -16,6 +19,8 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+
+        audioS = GetComponent<AudioSource>();
         ///////if the player has gotten caught when they replay the start screen wont appear again
         if(GameController.lostGame)
             startScreen.SetActive(false);
@@ -23,6 +28,7 @@ public class UIManager : MonoBehaviour
         {
             Time.timeScale = 0;
             startScreen.SetActive(true);
+            Cursor.visible = true;
         }
     }
 
@@ -156,6 +162,8 @@ public class UIManager : MonoBehaviour
 
     public void PlayButton()
     {
+        Cursor.visible = false;
+        audioS.PlayOneShot(buttonSound);
         Time.timeScale = 1;
         startScreen.SetActive(false);
     }

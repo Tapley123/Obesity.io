@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if(canSpawn)
         {
-            Debug.Log("Enemy Spawn Number = " + enemySpawnNumber);
+            //Debug.Log("Enemy Spawn Number = " + enemySpawnNumber);
             enemies[enemySpawnNumber].SetActive(true);
             enemies[enemySpawnNumber].gameObject.GetComponent<EnemyController>().spawn = true;
             

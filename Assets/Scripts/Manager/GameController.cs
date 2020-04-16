@@ -8,6 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    private AudioSource audioS;
+    [SerializeField] private AudioClip buttonSound;
+
     public GameObject winScreen, loseScreen;
     public static bool lostGame = false; //use this to prevent the start screen from coming up after the player dies and presses restart
 
@@ -17,6 +20,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        audioS = GetComponent<AudioSource>();
         Time.timeScale = 1;
         winScreen.SetActive(false);
         loseScreen.SetActive(false);
@@ -48,6 +52,8 @@ public class GameController : MonoBehaviour
 
     public void ReplayButton()
     {
+        Cursor.visible = false;
+        audioS.PlayOneShot(buttonSound);
         UIManager.nuggetAmount = 0;
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);

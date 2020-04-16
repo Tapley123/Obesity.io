@@ -69,8 +69,9 @@ public class EnemyController : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("CAUGHT!!");
+            //Debug.Log("CAUGHT!!");
             GameController.caughtByEnemy = true;
+            Cursor.visible = true;
         }
 
         if(other.CompareTag("Spawn1"))
