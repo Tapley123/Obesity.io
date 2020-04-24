@@ -10,6 +10,7 @@ TagManager:
   - Spawn2
   - Spawn3
   - Spawn4
+  - Ground
   layers:
   - Default
   - TransparentFX

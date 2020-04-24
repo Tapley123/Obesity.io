@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody myRb;
     private Vector3 moveDirection;
 
+    [SerializeField] private float sizeIncrese = 1.2f;
+    private bool grounded = false;
+
 
     void Start()
     {
@@ -44,6 +47,8 @@ public class PlayerController : MonoBehaviour
         Vector3 targetMoveAmount = moveDir * walkSpeed;
         moveAmount = Vector3.SmoothDamp(moveAmount, targetMoveAmount, ref smoothMoveVelocity, .15f);
 
+
+        /*
         // Jump
         if (Input.GetButtonDown("Jump") && Grounded())
                 myRb.AddForce(transform.up * jumpForce);
@@ -53,6 +58,18 @@ public class PlayerController : MonoBehaviour
             ainm.SetBool("grounded", true);
         else
             ainm.SetBool("grounded", false);
+        */
+        // Jump
+        if (Input.GetButtonDown("Jump") && grounded)
+            myRb.AddForce(transform.up * jumpForce);
+
+        // fly animation plays when chicken isnt on a surface
+        if (grounded)
+            ainm.SetBool("grounded", true);
+        else
+            ainm.SetBool("grounded", false);
+
+
 
         // Check if the player is moving forwards or backwards
         if (inputY != 0)
@@ -69,8 +86,30 @@ public class PlayerController : MonoBehaviour
         myRb.MovePosition(myRb.position + localMove);
     }
 
+    /*
     bool Grounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, coll.bounds.extents.y + jumpRange); //coll.bounds.extents.y <------ gets the cunter bottom of your collider
+    }
+    */
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Ground"))
+        {
+            grounded = true;
+        }
+
+        if(other.CompareTag("Food"))
+        {
+            transform.localScale *= sizeIncrese;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        grounded = false;
     }
 }
