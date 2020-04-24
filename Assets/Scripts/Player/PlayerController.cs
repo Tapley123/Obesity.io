@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     private bool grounded = false;
     [SerializeField] private float slowingSpeed = 0.9f;
 
+    public Joystick joystick;
+
 
     void Start()
     {
@@ -35,13 +37,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //turn left and right
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        //float inputX = Input.GetAxisRaw("Horizontal"); //computer controls
+        float inputX = joystick.Horizontal; //phone controls
+        if (inputX < 0)
             transform.Rotate(Vector3.up, -turnSpeed);
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        if(inputX > 0)
             transform.Rotate(Vector3.up, turnSpeed);
 
-        float inputY = Input.GetAxisRaw("Vertical");
+        //float inputY = Input.GetAxisRaw("Vertical"); //computer controls
+        float inputY = joystick.Vertical; //phone controls
 
         Vector3 moveDir = new Vector3(0, 0, inputY).normalized;
         Vector3 targetMoveAmount = moveDir * walkSpeed;
