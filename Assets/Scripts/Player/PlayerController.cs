@@ -47,13 +47,26 @@ public class PlayerController : MonoBehaviour
         //float inputY = Input.GetAxisRaw("Vertical"); //computer controls
         float inputY = joystick.Vertical; //phone controls
 
-        Vector3 moveDir = new Vector3(0, 0, inputY).normalized;
-        Vector3 targetMoveAmount = moveDir * walkSpeed;
+        //moving
+        if (inputY >= 0)
+            moveDirection = new Vector3(0, 0, inputY).normalized;
+        else
+            moveDirection = new Vector3(0, 0, 0);
+
+        Vector3 targetMoveAmount = moveDirection * walkSpeed;
+
         moveAmount = Vector3.SmoothDamp(moveAmount, targetMoveAmount, ref smoothMoveVelocity, .15f);
 
         
-        if (Input.GetButtonDown("Jump") && grounded)
+
+        //jumping
+        //if (Input.GetButtonDown("Jump") && grounded) //computer
+            //myRb.AddForce(transform.up * jumpForce);
+
+        if(Input.touchCount > 0 && Input.GetTouch(1).phase == TouchPhase.Began && grounded) //phone
             myRb.AddForce(transform.up * jumpForce);
+
+
 
         // fly animation plays when chicken isnt on a surface
         if (grounded)
@@ -61,9 +74,7 @@ public class PlayerController : MonoBehaviour
         else
             ainm.SetBool("grounded", false);
 
-
-
-        // Check if the player is moving forwards or backwards
+        // play walking animation when the player is moving
         if (inputY != 0)
             ainm.SetBool("moving", true);
         else if (inputY == 0)
