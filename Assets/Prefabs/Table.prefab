@@ -12731,9 +12731,10 @@ GameObject:
   - component: {fileID: 2484966222005691736}
   - component: {fileID: 8966299718842874468}
   - component: {fileID: 3927685465570203163}
+  - component: {fileID: 6300507965703213320}
   m_Layer: 0
   m_Name: Bum
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13027,6 +13028,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 0.1, z: 2}
   m_Center: {x: 1.2500005, y: 0.05, z: -1}
+--- !u!65 &6300507965703213320
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391923820855363519}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5000002, y: 0.15808836, z: 2}
+  m_Center: {x: 1.2500005, y: 0.07904418, z: -1}
 --- !u!1 &2696482715184776227
 GameObject:
   m_ObjectHideFlags: 0
@@ -29565,9 +29579,10 @@ GameObject:
   - component: {fileID: 4269401462062172161}
   - component: {fileID: 4269401462062172160}
   - component: {fileID: 4269401462062172167}
+  - component: {fileID: 4268218489615220056}
   m_Layer: 0
   m_Name: Top
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33666,6 +33681,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &4268218489615220056
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4269401462062172165}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.1900005, y: 0.37593317, z: 7.01}
+  m_Center: {x: -4, y: 0.18796659, z: 0}
 --- !u!1 &5636551205158586185
 GameObject:
   m_ObjectHideFlags: 0
@@ -33679,9 +33707,10 @@ GameObject:
   - component: {fileID: 9012972134263346671}
   - component: {fileID: 6679989233820064981}
   - component: {fileID: 4121247317304406954}
+  - component: {fileID: 1924896489089412316}
   m_Layer: 0
   m_Name: Bum
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33975,6 +34004,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 0.1, z: 2}
   m_Center: {x: 1.25, y: 0.05, z: -1}
+--- !u!65 &1924896489089412316
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5636551205158586185}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 0.1331048, z: 2}
+  m_Center: {x: 1.25, y: 0.0665524, z: -1}
 --- !u!1 &7530466368757873874
 GameObject:
   m_ObjectHideFlags: 0
@@ -42642,6 +42684,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837929092290684521, guid: bb7ada7bd608daa4baa97be4a23d5028,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 6.791358
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837929092290684521, guid: bb7ada7bd608daa4baa97be4a23d5028,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 5.675535
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837929092290684521, guid: bb7ada7bd608daa4baa97be4a23d5028,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 5.3231883
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837929092290684521, guid: bb7ada7bd608daa4baa97be4a23d5028,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.19122158
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837929092290684521, guid: bb7ada7bd608daa4baa97be4a23d5028,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.18408373
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837929092290684521, guid: bb7ada7bd608daa4baa97be4a23d5028,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.07689425
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3812564176529884913, guid: bb7ada7bd608daa4baa97be4a23d5028, type: 3}
