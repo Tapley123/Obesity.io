@@ -107,6 +107,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        grounded = false;
+        //grounded = false;
     }
 }
