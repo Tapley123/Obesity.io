@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 1754834561903906487}
   - component: {fileID: 1728589196293582080}
   - component: {fileID: 7231826374403217423}
-  - component: {fileID: 8461374596967441629}
+  - component: {fileID: 7896382706525774111}
   m_Layer: 0
   m_Name: Leg
   m_TagString: Untagged
@@ -4167,8 +4167,8 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8461374596967441629
-MeshCollider:
+--- !u!136 &7896382706525774111
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4177,10 +4177,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Radius: 0.17
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.17, y: 1.0000002, z: -0.00000047683716}
 --- !u!1 &1776141285168882154
 GameObject:
   m_ObjectHideFlags: 0
@@ -4193,7 +4193,7 @@ GameObject:
   - component: {fileID: 3677531465776347672}
   - component: {fileID: 4067073087999743395}
   - component: {fileID: 2850245705817349837}
-  - component: {fileID: 8122323148365013479}
+  - component: {fileID: 3066239096174693612}
   m_Layer: 0
   m_Name: Leg
   m_TagString: Untagged
@@ -8281,8 +8281,8 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8122323148365013479
-MeshCollider:
+--- !u!136 &3066239096174693612
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8291,10 +8291,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Radius: 0.17
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.16999952, y: 1.0000002, z: -0.00000047683716}
 --- !u!1 &1963576944168005396
 GameObject:
   m_ObjectHideFlags: 0
@@ -8307,7 +8307,7 @@ GameObject:
   - component: {fileID: 4936455020276594532}
   - component: {fileID: 8716076734698974921}
   - component: {fileID: 896547319851075444}
-  - component: {fileID: 6440488524665699059}
+  - component: {fileID: 7580441948252790687}
   m_Layer: 0
   m_Name: Leg
   m_TagString: Untagged
@@ -12395,8 +12395,8 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &6440488524665699059
-MeshCollider:
+--- !u!136 &7580441948252790687
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12405,10 +12405,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Radius: 0.17
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.17, y: 1.0000002, z: -0.00000047683716}
 --- !u!1 &1971770504850142361
 GameObject:
   m_ObjectHideFlags: 0
@@ -13053,7 +13053,7 @@ GameObject:
   - component: {fileID: 5023172025584615454}
   - component: {fileID: 2850055719418024718}
   - component: {fileID: 8324494045182317348}
-  - component: {fileID: 7910370981584504298}
+  - component: {fileID: 4609031896879056303}
   m_Layer: 0
   m_Name: Leg
   m_TagString: Untagged
@@ -17141,8 +17141,8 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &7910370981584504298
-MeshCollider:
+--- !u!136 &4609031896879056303
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -17151,10 +17151,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Radius: 0.17
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.17, y: 1.0000002, z: 0}
 --- !u!1 &3274305192252453975
 GameObject:
   m_ObjectHideFlags: 0
@@ -17167,7 +17167,7 @@ GameObject:
   - component: {fileID: 561547434200585928}
   - component: {fileID: 433795003952406875}
   - component: {fileID: 2655859448590477533}
-  - component: {fileID: 8179005733681867763}
+  - component: {fileID: 3106194246064338486}
   m_Layer: 0
   m_Name: Leg
   m_TagString: Untagged
@@ -21255,8 +21255,8 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8179005733681867763
-MeshCollider:
+--- !u!136 &3106194246064338486
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -21265,10 +21265,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Radius: 0.17
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.17, y: 1.0000002, z: -0.00000047683716}
 --- !u!1 &3575311673930106451
 GameObject:
   m_ObjectHideFlags: 0
@@ -21281,7 +21281,7 @@ GameObject:
   - component: {fileID: 4032771676669954826}
   - component: {fileID: 1466246216748095076}
   - component: {fileID: 7763904824288451371}
-  - component: {fileID: 6636788808240485715}
+  - component: {fileID: 3482424785452364796}
   m_Layer: 0
   m_Name: Leg
   m_TagString: Untagged
@@ -25369,8 +25369,8 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &6636788808240485715
-MeshCollider:
+--- !u!136 &3482424785452364796
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -25379,10 +25379,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Radius: 0.17
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.17, y: 1.0000002, z: 0}
 --- !u!1 &4136359463047419606
 GameObject:
   m_ObjectHideFlags: 0
@@ -25429,7 +25429,7 @@ GameObject:
   - component: {fileID: 4269401461434536152}
   - component: {fileID: 4269401461434536159}
   - component: {fileID: 4269401461434536158}
-  - component: {fileID: 4269401461434536157}
+  - component: {fileID: 1503057920166817534}
   m_Layer: 0
   m_Name: Pole
   m_TagString: Untagged
@@ -29517,8 +29517,8 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &4269401461434536157
-MeshCollider:
+--- !u!136 &1503057920166817534
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -29527,10 +29527,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Radius: 0.5
+  m_Height: 5.25
+  m_Direction: 1
+  m_Center: {x: -0.5, y: 2.625, z: 0}
 --- !u!1 &4269401461606644447
 GameObject:
   m_ObjectHideFlags: 0
@@ -29578,7 +29578,6 @@ GameObject:
   - component: {fileID: 4269401462062172162}
   - component: {fileID: 4269401462062172161}
   - component: {fileID: 4269401462062172160}
-  - component: {fileID: 4269401462062172167}
   - component: {fileID: 4268218489615220056}
   m_Layer: 0
   m_Name: Top
@@ -33667,20 +33666,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &4269401462062172167
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4269401462062172165}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!65 &4268218489615220056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34062,7 +34047,7 @@ GameObject:
   - component: {fileID: 1072508360532297393}
   - component: {fileID: 4612553112378849569}
   - component: {fileID: 1589163584207344674}
-  - component: {fileID: 8526741869681808087}
+  - component: {fileID: 6572588524937762222}
   m_Layer: 0
   m_Name: Leg
   m_TagString: Untagged
@@ -38150,8 +38135,8 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8526741869681808087
-MeshCollider:
+--- !u!136 &6572588524937762222
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -38160,10 +38145,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Radius: 0.17
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.17, y: 1.0000002, z: -0.00000047683716}
 --- !u!1 &7794987744519166134
 GameObject:
   m_ObjectHideFlags: 0
@@ -38485,7 +38470,7 @@ GameObject:
   - component: {fileID: 6684617292404728380}
   - component: {fileID: 7036182695970675454}
   - component: {fileID: 29582800448879893}
-  - component: {fileID: 3821306967735549125}
+  - component: {fileID: 3751263335324222027}
   m_Layer: 0
   m_Name: Leg
   m_TagString: Untagged
@@ -42573,8 +42558,8 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &3821306967735549125
-MeshCollider:
+--- !u!136 &3751263335324222027
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -42583,10 +42568,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Radius: 0.17
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.17, y: 1.0000002, z: -0.00000047683716}
 --- !u!1001 &3943211887283513365
 PrefabInstance:
   m_ObjectHideFlags: 0

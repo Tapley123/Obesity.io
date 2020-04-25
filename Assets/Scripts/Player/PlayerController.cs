@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    protected Collider coll;
-    [SerializeField] private float jumpRange = 1f;
     private Animator ainm;
 
     public float turnSpeed = 1.5f; //angle of turn
@@ -31,7 +29,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         myRb = GetComponent<Rigidbody>();
-        coll = GetComponent<Collider>();
         ainm = GetComponent<Animator>();
     }
 
