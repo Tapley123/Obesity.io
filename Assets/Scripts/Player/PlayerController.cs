@@ -39,16 +39,13 @@ public class PlayerController : MonoBehaviour
     {
         //float inputX = Input.GetAxisRaw("Horizontal"); //computer controls
         float inputX = joystick.Horizontal; //phone controls
-        if (inputX < 0)
-            transform.Rotate(Vector3.up, -turnSpeed);
-        if(inputX > 0)
-            transform.Rotate(Vector3.up, turnSpeed);
+        transform.Rotate(0, inputX * turnSpeed, 0);
 
         //float inputY = Input.GetAxisRaw("Vertical"); //computer controls
         float inputY = joystick.Vertical; //phone controls
 
         //moving
-        if (inputY >= 0)
+        if (inputY >= -0.75f)
             moveDirection = new Vector3(0, 0, inputY).normalized;
         else
             moveDirection = new Vector3(0, 0, 0);
@@ -57,28 +54,12 @@ public class PlayerController : MonoBehaviour
 
         moveAmount = Vector3.SmoothDamp(moveAmount, targetMoveAmount, ref smoothMoveVelocity, .15f);
 
-        
-
-        //jumping
-        //if (Input.GetButtonDown("Jump") && grounded) //computer
-            //myRb.AddForce(transform.up * jumpForce);
-
-        if(Input.touchCount > 0 && Input.GetTouch(1).phase == TouchPhase.Began && grounded) //phone
-            myRb.AddForce(transform.up * jumpForce);
-
-
 
         // fly animation plays when chicken isnt on a surface
         if (grounded)
             ainm.SetBool("grounded", true);
         else
             ainm.SetBool("grounded", false);
-
-        // play walking animation when the player is moving
-        if (inputY != 0)
-            ainm.SetBool("moving", true);
-        else if (inputY == 0)
-            ainm.SetBool("moving", false);
     }
 
 
@@ -87,6 +68,31 @@ public class PlayerController : MonoBehaviour
         // Apply movement to rigidbody
         Vector3 localMove = transform.TransformDirection(moveAmount) * Time.fixedDeltaTime;
         myRb.MovePosition(myRb.position + localMove);
+
+        if (localMove.z > 0)
+            ainm.SetBool("moving", true);
+        else
+            ainm.SetBool("moving", false);
+
+        //jumping
+        //if (Input.GetButtonDown("Jump") && grounded) //computer
+        //myRb.AddForce(transform.up * jumpForce);
+
+        /*
+        if (Input.touchCount > 0 && Input.GetTouch(1).phase == TouchPhase.Began && grounded) //phone
+            myRb.AddForce(transform.up * jumpForce);
+        */
+        if (Input.touchCount > 0)
+        {
+            foreach (Touch touch in Input.touches)
+            {
+                //For right half screen
+                if (touch.phase == TouchPhase.Began && touch.position.x > Screen.width / 2 && grounded)
+                {
+                    myRb.AddForce(transform.up * jumpForce);
+                }
+            }
+        }
     }
     
 
