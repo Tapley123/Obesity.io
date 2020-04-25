@@ -60,6 +60,12 @@ public class PlayerController : MonoBehaviour
             ainm.SetBool("grounded", true);
         else
             ainm.SetBool("grounded", false);
+
+        //play walk animation when moving
+        if (moveAmount.z > 0.2 || moveAmount.z < -0.2)
+            ainm.SetBool("moving", true);
+        else
+            ainm.SetBool("moving", false);
     }
 
 
@@ -69,19 +75,7 @@ public class PlayerController : MonoBehaviour
         Vector3 localMove = transform.TransformDirection(moveAmount) * Time.fixedDeltaTime;
         myRb.MovePosition(myRb.position + localMove);
 
-        if (localMove.z > 0)
-            ainm.SetBool("moving", true);
-        else
-            ainm.SetBool("moving", false);
-
         //jumping
-        //if (Input.GetButtonDown("Jump") && grounded) //computer
-        //myRb.AddForce(transform.up * jumpForce);
-
-        /*
-        if (Input.touchCount > 0 && Input.GetTouch(1).phase == TouchPhase.Began && grounded) //phone
-            myRb.AddForce(transform.up * jumpForce);
-        */
         if (Input.touchCount > 0)
         {
             foreach (Touch touch in Input.touches)
