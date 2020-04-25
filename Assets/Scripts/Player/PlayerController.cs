@@ -80,7 +80,9 @@ public class PlayerController : MonoBehaviour
                 //For right half screen
                 if (touch.phase == TouchPhase.Began && touch.position.x > Screen.width / 2 && grounded)
                 {
+                    grounded = false;
                     myRb.AddForce(transform.up * jumpForce);
+                    //Debug.Log("Right Touch");
                 }
             }
         }
