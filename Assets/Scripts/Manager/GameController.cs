@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject chicken;
+
     private AudioSource audioS;
     [SerializeField] private AudioClip buttonSound;
 
@@ -35,10 +37,11 @@ public class GameController : MonoBehaviour
 
             winTimeText.text = TimerController.winTime;
 
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
 
             winScreen.SetActive(true);
             Cursor.visible = true;
+            chicken.transform.position = new Vector3(1000, 1000, 1000);
         }
 
         if(caughtByEnemy)
