@@ -34,16 +34,24 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //float inputX = Input.GetAxisRaw("Horizontal"); //computer controls
-        float inputX = joystick.Horizontal; //phone controls
-        transform.Rotate(0, inputX * turnSpeed, 0);
+        float pcInputX = Input.GetAxisRaw("Horizontal"); //computer controls
+        float mobileInputX = joystick.Horizontal; //phone controls
 
-        //float inputY = Input.GetAxisRaw("Vertical"); //computer controls
-        float inputY = joystick.Vertical; //phone controls
+        transform.Rotate(0, mobileInputX * turnSpeed, 0);
+        transform.Rotate(0, pcInputX * turnSpeed, 0);
 
-        //moving
-        if (inputY >= -0.75f)
-            moveDirection = new Vector3(0, 0, inputY).normalized;
+        float pcInputY = Input.GetAxisRaw("Vertical"); //computer controls
+        float mobileInputY = joystick.Vertical; //phone controls
+
+        //moving Mobile
+        if (mobileInputY >= -0.75f)
+            moveDirection = new Vector3(0, 0, mobileInputY).normalized;
+        else
+            moveDirection = new Vector3(0, 0, 0);
+
+        //moving PC
+        if (pcInputY >= -0.75f)
+            moveDirection = new Vector3(0, 0, pcInputY).normalized;
         else
             moveDirection = new Vector3(0, 0, 0);
 
@@ -72,7 +80,7 @@ public class PlayerController : MonoBehaviour
         Vector3 localMove = transform.TransformDirection(moveAmount) * Time.fixedDeltaTime;
         myRb.MovePosition(myRb.position + localMove);
 
-        //jumping
+        //jumping Mobile
         if (Input.touchCount > 0)
         {
             foreach (Touch touch in Input.touches)
@@ -85,6 +93,14 @@ public class PlayerController : MonoBehaviour
                     //Debug.Log("Right Touch");
                 }
             }
+        }
+
+        //jumping PC
+        if(Input.GetKey(KeyCode.Space) && grounded)
+        {
+            //Debug.Log("Space");
+            grounded = false;
+            myRb.AddForce(transform.up * jumpForce);
         }
     }
     
