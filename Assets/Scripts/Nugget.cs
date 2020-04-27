@@ -5,12 +5,12 @@ using UnityEngine;
 public class Nugget : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 10f;
-    public GameObject enemy;
         
     void Update()
     {
-        Vector3 rotate = new Vector3(transform.rotation.x, transform.rotation.y + rotationSpeed * Time.deltaTime, transform.rotation.z);
-        transform.Rotate(rotate);
+        //Vector3 rotate = new Vector3(transform.rotation.x, transform.rotation.y + rotationSpeed * Time.deltaTime, transform.rotation.z);
+        //transform.Rotate(rotate);
+        transform.Rotate(0, transform.rotation.y + rotationSpeed * Time.deltaTime, 0);
     }
 
     private void OnTriggerEnter(Collider other)
