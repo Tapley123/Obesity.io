@@ -34,26 +34,28 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float pcInputX = Input.GetAxisRaw("Horizontal"); //computer controls
+        //float pcInputX = Input.GetAxisRaw("Horizontal"); //computer controls
         float mobileInputX = joystick.Horizontal; //phone controls
 
         transform.Rotate(0, mobileInputX * turnSpeed, 0);
-        transform.Rotate(0, pcInputX * turnSpeed, 0);
+        //transform.Rotate(0, pcInputX * turnSpeed, 0);
 
-        float pcInputY = Input.GetAxisRaw("Vertical"); //computer controls
+        //float pcInputY = Input.GetAxisRaw("Vertical"); //computer controls
         float mobileInputY = joystick.Vertical; //phone controls
 
         //moving Mobile
-        if (mobileInputY >= -0.75f)
+        if (mobileInputY >= -0.75f)// && pcInputY == 0)
             moveDirection = new Vector3(0, 0, mobileInputY).normalized;
         else
             moveDirection = new Vector3(0, 0, 0);
 
+        /*
         //moving PC
-        if (pcInputY >= -0.75f)
+        if (pcInputY >= -0.75f && mobileInputY == 0)
             moveDirection = new Vector3(0, 0, pcInputY).normalized;
         else
             moveDirection = new Vector3(0, 0, 0);
+        */
 
         Vector3 targetMoveAmount = moveDirection * walkSpeed;
 
