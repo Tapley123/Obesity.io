@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491772164504947193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.045, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3441153623512405262}
@@ -25289,7 +25289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4136359463047419606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.053, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2732718233550326029}
@@ -42514,8 +42514,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemy
       value: 
-      objectReference: {fileID: 7880102653658174413, guid: ef534ed83094e494583db87d56fdb93e,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7837929092290684521, guid: bb7ada7bd608daa4baa97be4a23d5028,
         type: 3}
       propertyPath: m_IsTrigger
